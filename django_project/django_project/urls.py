@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from users import views as user_views #importamos las views de users
 
 urlpatterns = [
     path('admin/', admin.site.urls), #ruta /admin
+    path('register/', user_views.register, name='register'),#mapeo haci registrar usuario
     path('', include('blog.urls')) #mapeo hacia las urls de blog ruta /blog
 ]

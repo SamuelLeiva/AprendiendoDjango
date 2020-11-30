@@ -10,5 +10,5 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now) #fecha actual
     author = models.ForeignKey(User, on_delete=models.CASCADE) #si el usuario es eliminado, se eliminaran sus posts
 
-    def __str__(self):
+    def __str__(self): #devuelve title (revisar funciones especiales)
         return self.title
