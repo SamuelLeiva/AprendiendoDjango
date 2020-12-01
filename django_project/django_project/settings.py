@@ -124,3 +124,9 @@ STATIC_URL = '/static/'
 
 #por defecto crispy forms usa bootstrap 2 , lo cambiamos
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#redirect despues de hacer login
+LOGIN_REDIRECT_URL = 'blog-home'
+#redireccionamossi es que ingresan a profile y no estan loggeados
+LOGIN_URL = 'login'
+
