@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -121,6 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#paths para almacenar files, imagenes, etc que se hayan subido
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #carpeta media
+MEDIA_URL = '/media/'
 
 #por defecto crispy forms usa bootstrap 2 , lo cambiamos
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
