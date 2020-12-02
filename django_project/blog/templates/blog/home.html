@@ -9,9 +9,9 @@
                 <a class="mr-2" href="#">{{ post.author }}</a> <!--lo usamos para pasar variables que son mandadas al html mediante views.py-->
                 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small> <!--dandole formato a la fecha(ver date en docs de django)-->
                 </div>
-                <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2> <!--pagina de post individual, pasamos post.id como parametro de url-->
                 <p class="article-content">{{ post.content }}</p>
-            </div>
+            </div> 
         </article>
     {% endfor %}
 {% endblock content %}
