@@ -5,7 +5,7 @@
         <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="#">{{ object.author }}</a> <!--lo usamos para pasar variables que son mandadas al html mediante views.py-->
+                <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a> <!--lo usamos para pasar variables que son mandadas al html mediante views.py-->
                 <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small> <!--dandole formato a la fecha(ver date en docs de django)-->
                 {% if object.author == user %}
                     <div>

@@ -4,12 +4,14 @@ from .views import (
     PostDetailView, 
     PostCreateView,
     PostUpdateView,
-    PostDeleteView
+    PostDeleteView,
+    UserPostListView
 )
 from . import views
 
 urlpatterns = [
-    path('', PostListView.as_view(), name='blog-home'), #ruta: / 
+    path('', PostListView.as_view(), name='blog-home'), #ruta: /
+    path('user/<str:username>', UserPostListView.as_view(), name='user-posts'), #buscara a user_posts.html
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'), #indicamos que aparezca la primary key entera en la url
     path('post/new/', PostCreateView.as_view(), name='post-create'), #por defecto buscara post_form.html
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'), #usa el mismo template que create
