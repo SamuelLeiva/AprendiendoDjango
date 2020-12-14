@@ -11,12 +11,12 @@ class Profile(models.Model):
     def __str__(self): #si mandamos a imprimir este model que se muestre lo siguiente
         return f'{self.user.username} Profile'
 
-    def save(self): #resize images
-        super().save() #metodo save de la clase padre
+    """def save(self, *args, **kwargs): #resize images
+        super().save(*args, **kwargs) #metodo save de la clase padre
 
         img = Image.open(self.image.path) #image de la instancia actual
 
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)
             img.thumbnail(output_size)
-            img.save(self.image.path)
+            img.save(self.image.path)"""
